@@ -1,0 +1,18 @@
+{
+  "sandbox": 
+  {
+    "clientID": "YOUR-SANDBOX-CLIENT-ID",
+    "secret": "YOUR-SANDBOX-SECRET",
+    "url":"https://api.sandbox.paypal.com"
+  },
+  "production":
+  {
+    "clientID": "YOUR-PRODUCTION-CLIENT-ID",
+    "secret": "YOUR-PRODUCTION-SECRET",
+    "url":"https://api.paypal.com"
+  },
+  "headers":
+  {
+    "Content-Type":"application/json"
+  }
+}
