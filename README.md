@@ -1,1 +1,1 @@
-# SubscriptionPayPal
+# Subscription PayPal Ruby
