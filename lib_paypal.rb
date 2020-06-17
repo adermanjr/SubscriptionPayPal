@@ -7,10 +7,10 @@ module MyModules
     
     def cancel_subscription(env, subscriptionId)
       
-      paypal_data = JSON.load(File.read('config/paypal_data.json'))
+      paypal_data = JSON.load(File.read('SET_YOUR_PATH_/paypal_data.json'))
       url_base = paypal_data[env]['url']
       
-      ret = get_token(url_base, paypal_data[env]['clienteID'], paypal_data[env]['secret'])
+      ret = get_token(url_base, paypal_data[env]['clientID'], paypal_data[env]['secret'])
       return ret if !ret[:success]
       
       uri = URI.parse("#{url_base}/v1/billing/subscriptions/#{subscriptionId}/cancel")
@@ -45,7 +45,7 @@ module MyModules
       paypal_data = JSON.load(File.read('config/paypal_data.json'))
       url_base = paypal_data[env]['url']
       
-      ret = get_token(url_base, paypal_data[env]['clienteID'], paypal_data[env]['secret'])
+      ret = get_token(url_base, paypal_data[env]['clientID'], paypal_data[env]['secret'])
       return ret if !ret[:success]
       
       uri = URI.parse("#{url_base}/v1/billing/subscriptions/#{subscriptionId}/activate")
@@ -86,7 +86,7 @@ module MyModules
       paypal_data = JSON.load(File.read('config/paypal_data.json'))
       url_base = paypal_data[env]['url']
       
-      ret = get_token(url_base, paypal_data[env]['clienteID'], paypal_data[env]['secret'])
+      ret = get_token(url_base, paypal_data[env]['clientID'], paypal_data[env]['secret'])
       return ret if !ret[:success]
       
       url_show_subscription = "#{url_base}/v1/billing/subscriptions/#{subscriptionId}"
